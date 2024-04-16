@@ -68,7 +68,7 @@ namespace ContactUJBlockchain.Pages.users
 					try
 					{
 						var email = new MimeMessage();
-						email.From.Add(MailboxAddress.Parse("lukwagorsaved@gmail.com"));
+						email.From.Add(MailboxAddress.Parse("your email"));
 						email.To.Add(MailboxAddress.Parse(userInfo.email));
 						email.Subject = "UJ Blockchain";
 						String body = "We have received your message,  thank you for contacting UJ Blockchain";
@@ -77,7 +77,7 @@ namespace ContactUJBlockchain.Pages.users
 
 						using var smtp = new MailKit.Net.Smtp.SmtpClient();
 						smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
-						smtp.Authenticate("lukwagorsaved@gmail.com", "wyfu grky xpol hmnm");
+						smtp.Authenticate("your email", "your password");
 						smtp.Send(email);
 						smtp.Disconnect(true);
 
