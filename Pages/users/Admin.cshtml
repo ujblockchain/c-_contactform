@@ -1,0 +1,53 @@
+﻿@page
+@model ContactUJBlockchain.Pages.users.AdminModel
+@{
+}
+
+<br />
+<h2 class="text-center text-light">Login</h2>
+
+
+
+<form method="POST">
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label text-light">Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="name" />
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label text-light">Email</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="email" />
+		</div>
+	</div>
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label text-light">Password</label>
+		<div class="col-sm-6">
+			<input type="password" class="form-control" name="password" />
+		</div>
+	</div>
+
+
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-6 d-grid">
+			<button type="submit" class="btn btn-primary">Login</button>
+		</div>
+	</div>
+
+
+</form>
+
+@if (Model.errorMessage.Length > 0)
+{
+	<div class="row mb-3 justify-content-center">
+		<div class="col-sm-6">
+			<div class="alert alert-warning alert-dismissible fade show text-danger text-center" role="alert">
+				<strong>@Model.errorMessage</strong>
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+		</div>
+	</div>
+}

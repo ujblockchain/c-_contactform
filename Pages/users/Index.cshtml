@@ -1,0 +1,36 @@
+﻿@page
+@model ContactUJBlockchain.Pages.users.IndexModel
+@{
+}
+<br />
+<h2 class="text-center text-light">List of Contacts</h2>
+
+<table class="table text-light">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Message</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		
+		@foreach (var item in Model.listUsers)
+		{
+				<tr class="text-light">
+					<td>@item.id</td>
+					<td>@item.name</td>
+					<td>@item.email</td>
+					<td>@item.message</td>
+					<td>
+						<a class="btn btn-primary btn-sm" href="/users/Edit?id=@item.id">Edit</a>
+						<a class="btn btn-danger btn-sm" href="/users/Delete?id=@item.id">Delete</a>
+					</td>
+				</tr>			
+		}
+	</tbody>
+
+</table>
